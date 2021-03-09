@@ -137,11 +137,6 @@ tinymce.PluginManager.add('variable', function (editor) {
       div = editor.dom.create('div', null, nodeValue);
       while ((node = div.lastChild)) {
         editor.dom.insertAfter(node, nodeList[i]);
-
-        if (isVariable(node)) {
-          var next = node.nextSibling;
-          editor.selection.setCursorLocation(next);
-        }
       }
 
       editor.dom.remove(nodeList[i]);
@@ -184,14 +179,6 @@ tinymce.PluginManager.add('variable', function (editor) {
       // remove HTML variable node
       // because we now have an text representation of the variable
       editor.dom.remove(nodeList[i]);
-    }
-  }
-
-  function setCursor(selector) {
-    var ell = editor.dom.select(selector)[0];
-    if (ell) {
-      var next = ell.nextSibling;
-      editor.selection.setCursorLocation(next);
     }
   }
 
