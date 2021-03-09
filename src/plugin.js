@@ -232,6 +232,7 @@ tinymce.PluginManager.add('variable', function (editor) {
 
   editor.on('nodechange', stringToHTML);
   editor.on('keyup', stringToHTML);
+  editor.on('getcontent', stringToHTML);
   editor.on('beforegetcontent', handleContentRerender);
   editor.on('click', handleClick);
 
